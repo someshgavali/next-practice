@@ -10,7 +10,6 @@ async function productList() {
 
 const ProductslistPage = async () => {
   const products = await productList();
-  console.log(products);
   return (
     <div>
       <h1>Products List</h1>
