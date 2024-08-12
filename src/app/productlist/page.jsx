@@ -1,5 +1,6 @@
 "use client";
 import { useState, useEffect } from "react";
+import Product from "./product";
 
 const ProductListPage = () => {
   const [productsData, setProductsData] = useState([]);
@@ -9,7 +10,7 @@ const ProductListPage = () => {
       try {
         const response = await fetch("https://dummyjson.com/products");
         const data = await response.json();
-        setProductsData(data.products); // Update this line to access the products array
+        setProductsData(data.products);
       } catch (error) {
         console.error("Error fetching products:", error);
       }
@@ -26,9 +27,15 @@ const ProductListPage = () => {
       {productsData.length > 0 ? (
         <ul>
           {productsData.map((product) => (
-            <li key={product.id}>
-              {product.title} / {product.price}
-            </li>
+            <>
+              <li key={product.id}>
+                {product.title}
+                <br />
+                {product.price}
+              </li>
+              <Product price={product.price} />
+              <br />
+            </>
           ))}
         </ul>
       ) : (
