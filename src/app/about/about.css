@@ -1,0 +1,23 @@
+.aboutMenu {
+    display: flex;
+}
+
+.aboutMenu li {
+    margin-left: 10px;
+    list-style-type: none;
+}
+
+.aboutMenu li a {
+    text-decoration: none;
+    color: black;
+}
+
+.aboutMenu h4 {
+    margin: 0;
+}
+
+.heading {
+    color: orange;
+    text-align: center;
+    margin-top: 50px;
+}
